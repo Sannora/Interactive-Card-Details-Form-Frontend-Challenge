@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <link rel="stylesheet" href="styleIndex.css" />
+  </head>
+  <body id="backgroundPrimary">
+    <div id="backgroundAuxiliary">
+      <div id="containerAuxiliary">
+        <div id="cardFrontFace">
+          <img id="imageFrontFace" src="images/bg-card-front.png" />
+          <svg
+            id="iconLogo"
+            width="81"
+            height="42"
+            viewbox="0 0 84 47"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff" />
+            <path
+              d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z"
+              stroke="#fff"
+            />
+          </svg>
+          <div id="cardDetails">
+            <div id="cardNumber">0000 0000 0000 0000</div>
+            <div id="lowerDetails">
+              <div id="cardholderName">Jane Appleseed</div>
+              <div id="cardExpDate">
+                <span id="cardExpMonth">00</span> /
+                <span id="cardExpYear">00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="cardBackFace">
+          <img id="imageBackFace" src="images/bg-card-back.png" />
+          <div id="cardCvc">000</div>
+        </div>
+      </div>
+    </div>
+    <div id="backgroundSecondary">
+      <div id="divComplete">
+        <svg
+          id="iconComplete"
+          width="80"
+          height="80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="40" cy="40" r="40" fill="url(#a)" />
+          <path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3" />
+          <defs>
+            <linearGradient
+              id="a"
+              x1="-23.014"
+              y1="11.507"
+              x2="0"
+              y2="91.507"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#6348FE" />
+              <stop offset="1" stop-color="#610595" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <h1 id="thanks">Thank you!</h1>
+        <p id="completeContent">We've added your card details</p>
+        <button id="buttonContinue">Continue</button>
+      </div>
+      <div id="divForm">
+        <div id="formContainer">
+          <form onsubmit="event.preventDefault(); validateForm();">
+            <div class="credentialContainers">
+              <label id="cardholderInput" for="inputName"
+                >Cardholder Name</label
+              >
+              <input
+                required
+                class="credentialInputs"
+                type="text"
+                id="inputName"
+                name="nameInput"
+                placeholder="e.g. Jane Appleseed"
+                maxlength="30"
+                onkeyup="this.value = this.value.replace(/[^a-zA-Z\s]/, '')"
+              />
+              <div class="validationMessage"></div>
+            </div>
+            <div class="credentialContainers">
+              <label id="cardNumberInput" for="inputcardNumber"
+                >Card Number</label
+              >
+              <input
+                class="credentialInputs"
+                type="text"
+                id="inputCardNumber"
+                name="numberInput"
+                placeholder="e.g. 1234 5678 9123 0000"
+                maxlength="16"
+                minlength="16"
+                required
+                onkeyup="this.value = this.value.replace(/[^0-9]/, '')"
+              />
+              <div class="validationMessage"></div>
+            </div>
+            <div id="lowerContentContainer">
+              <div class="credentialContainers">
+                <label id="expMonthInput" for="inputExpMonth"
+                  >Exp. Date (MM/YY)</label
+                >
+                <div id="dateContainer">
+                  <div id="monthContainer">
+                    <input
+                      class="credentialInputs"
+                      type="text"
+                      id="inputExpMonth"
+                      name="monthInput"
+                      placeholder="MM"
+                      maxlength="2"
+                      minlength="2"
+                      required
+                      onkeyup="this.value = this.value.replace(/[^0-9]/, '')"
+                    />
+                    <div class="validationMessage"></div>
+                  </div>
+                  <div id="yearContainer">
+                    <input
+                      class="credentialInputs"
+                      type="text"
+                      id="inputExpYear"
+                      name="yearInput"
+                      placeholder="YY"
+                      maxlength="2"
+                      minlength="2"
+                      required
+                      onkeyup="this.value = this.value.replace(/[^0-9]/, '')"
+                    />
+                    <div class="validationMessage"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="cvcContainer" class="credentialContainers">
+                <label id="cvcInput" for="inputCvc">CVC</label>
+                <input
+                  class="credentialInputs"
+                  type="text"
+                  id="inputCvc"
+                  name="cvc"
+                  placeholder="e.g. 123"
+                  maxlength="3"
+                  required
+                  onkeyup="this.value = this.value.replace(/[^0-9]/, '')"
+                />
+                <div class="validationMessage"></div>
+              </div>
+            </div>
+            <button type="submit" id="buttonConfirm">Confirm</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="scriptIndex.js"></script>
+  </body>
+</html>

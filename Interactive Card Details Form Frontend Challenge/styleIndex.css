@@ -1,0 +1,429 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+/* Body Elements */
+
+* {
+  margin: 0;
+}
+
+#backgroundPrimary {
+  height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+#formContainer,
+.credentialContainers {
+  display: flex;
+  flex-direction: column;
+}
+
+#lowerContentContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#dateContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.credentialInputs {
+  border: solid thin hsl(270, 3%, 87%);
+}
+
+.credentialInputs:focus {
+  outline: none !important;
+  border: thin solid hsl(279, 6%, 55%);
+}
+
+#buttonConfirm,
+#buttonContinue {
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+
+form {
+  width: 100%;
+}
+
+/* Complete State */
+
+#divComplete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+/* Typography */
+
+#backgroundPrimary,
+input,
+#buttonConfirm,
+#buttonContinue {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+}
+
+#backgroundAuxiliary {
+  color: hsl(0, 0%, 100%);
+  text-transform: uppercase;
+}
+
+.credentialContainers {
+  text-transform: uppercase;
+}
+
+#thanks {
+  text-transform: uppercase;
+}
+
+.validationMessage {
+  color: hsl(0, 100%, 66%);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* Desktop Responsive Query */
+@media screen and (min-width: 768px) {
+  /* Card Display */
+
+  #backgroundAuxiliary {
+    background-image: url(images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 25.1%;
+    position: absolute;
+  }
+
+  #containerAuxiliary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+  }
+
+  #cardFrontFace {
+    width: 100%;
+    position: relative;
+    left: 35%;
+    border-radius: 0.6em;
+    box-shadow: 0em 0.5em 5em 0.1em #000;
+  }
+
+  #imageFrontFace {
+    width: 100%;
+    height: 100%;
+  }
+
+  #iconLogo {
+    position: absolute;
+    left: 5%;
+    top: 10%;
+  }
+
+  #cardDetails {
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #cardNumber {
+    text-align: center;
+  }
+
+  #lowerDetails {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5em;
+  }
+
+  #cardBackFace {
+    width: 100%;
+    position: relative;
+    top: -7.5%;
+    left: 55%;
+    border-radius: 0.6em;
+    box-shadow: 0em 0.1em 1em 0.01em #000;
+  }
+
+  #imageBackFace {
+    width: 100%;
+    height: 100%;
+  }
+
+  #cardCvc {
+    position: absolute;
+    top: 43%;
+    left: 80%;
+  }
+
+  /* Typography */
+  #cardNumber {
+    font-size: 1.25rem;
+    letter-spacing: 0.15rem;
+  }
+
+  /* Form Display */
+
+  #backgroundSecondary {
+    height: 100%;
+    width: 74.9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+  }
+
+  #divForm {
+    width: 30%;
+    max-width: 50%;
+  }
+
+  #inputExpYear,
+  #inputExpMonth {
+    width: 60%;
+  }
+
+  .credentialContainers {
+    margin-bottom: 1.5em;
+  }
+
+  .credentialInputs {
+    border-radius: 0.5em;
+    padding: 0.5em;
+    border-width: 0.15em;
+  }
+
+  .credentialInputs:focus {
+    border-width: 0.15em;
+  }
+
+  input {
+    margin-top: 0.5em;
+  }
+
+  #buttonConfirm {
+    margin-top: 1em;
+    padding: 0.75em;
+    border-radius: 0.5em;
+    width: 100%;
+  }
+
+  /* Typography */
+
+  .credentialContainers {
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .validationMessage {
+    font-size: 0.6rem;
+  }
+
+  /* Complete State */
+
+  #divComplete {
+    width: 30%;
+    max-width: 50%;
+  }
+
+  #buttonContinue {
+    margin-top: 1em;
+    padding: 0.75em;
+    border-radius: 0.5em;
+    width: 90%;
+  }
+}
+
+/* Transition Query */
+
+@media screen and (max-width: 1184px) {
+  #cardNumber {
+    font-size: 0.75rem;
+    letter-spacing: 0.15rem;
+  }
+
+  #cardCvc {
+    font-size: 0.75rem;
+  }
+
+  .validationMessage {
+    font-size: 0.6rem;
+  }
+}
+
+/* Mobile Responsive Query */
+@media screen and (max-width: 767px) {
+  /* Card Display */
+
+  #backgroundAuxiliary {
+    background-image: url(images/bg-main-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 34%;
+    width: 100%;
+    position: absolute;
+  }
+
+  #containerAuxiliary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+  }
+
+  #cardFrontFace {
+    width: 80%;
+    position: relative;
+    z-index: 1;
+    left: 2.5%;
+    top: 80%;
+  }
+
+  #imageFrontFace {
+    width: 100%;
+  }
+
+  #iconLogo {
+    position: absolute;
+    left: 5%;
+    top: 10%;
+  }
+
+  #cardDetails {
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #cardNumber {
+    text-align: center;
+  }
+
+  #lowerDetails {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5em;
+  }
+
+  #cardBackFace {
+    width: 80%;
+    position: relative;
+    z-index: 0;
+    top: -40%;
+    left: 17.5%;
+  }
+
+  #imageBackFace {
+    width: 100%;
+  }
+
+  #cardCvc {
+    position: absolute;
+    top: 43%;
+    left: 80%;
+  }
+
+  /* Typography */
+  #cardNumber {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+
+  /* Form Display */
+
+  #backgroundSecondary {
+    height: 66%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+  }
+
+  #divForm {
+    width: 70%;
+    max-width: 80%;
+  }
+
+  #inputExpYear,
+  #inputExpMonth {
+    width: 30%;
+  }
+
+  #inputExpMonth {
+    margin-right: 0.5em;
+  }
+
+  .credentialContainers {
+    margin-bottom: 1.5em;
+  }
+
+  .credentialInputs {
+    border-radius: 0.5em;
+    padding: 0.5em;
+    border-width: 0.15em;
+  }
+
+  .credentialInputs:focus {
+    border-width: 0.15em;
+  }
+
+  input {
+    margin-top: 0.5em;
+  }
+
+  #buttonConfirm {
+    margin-top: 1em;
+    padding: 0.75em;
+    border-radius: 0.5em;
+    width: 100%;
+  }
+
+  #inputCvc {
+    width: 80%;
+  }
+
+  /* Typography */
+
+  .credentialContainers {
+    font-size: 0.6rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .validationMessage {
+    font-size: 0.6rem;
+  }
+
+  /* Complete State */
+
+  #divComplete {
+    width: 70%;
+    max-width: 80%;
+  }
+
+  #buttonContinue {
+    margin-top: 2.5em;
+    padding: 1em;
+    border-radius: 0.5em;
+    width: 100%;
+  }
+}
